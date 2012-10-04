@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Ibham::VERSION
   gem.authors       = ['Jamal El Milahi']
   gem.email         = ['jamal@elmilahi.com']
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ''
+  gem.description   = %q{Voting System for Rails applications}
+  gem.summary       = %q{Ibham is a gem that allows Rails apps to compute and display voting scores for active records models.}
+  gem.homepage      = 'https://github.com/bloc40/ibham'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
