@@ -1,10 +1,9 @@
 require 'bundler/gem_tasks'
-require 'rspec/core/rake_task'
+require 'rake/testtask'
 
 desc 'Default: run specs.'
-task :default => :rspec
+task default: :test
 
-RSpec::Core::RakeTask.new(:rspec) do |test|
-  test.rspec_opts = ['--color']
+Rake::TestTask.new do |test|
   test.pattern = './spec/**/*_spec.rb'
 end

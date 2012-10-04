@@ -1,7 +1,11 @@
 require 'active_record'
 require 'database_cleaner'
 require 'sqlite3'
+require 'turn'
 require 'ibham'
+require 'minitest/autorun'
+
+Turn.config.format = :dot
 
 db_config = {
   :adapter => 'sqlite3',
@@ -12,9 +16,9 @@ ActiveRecord::Base.establish_connection(db_config)
 
 ActiveRecord::Migration.verbose = false
 
-RSpec.configure do |config|
-  config.before(:each) { DatabaseCleaner.start }
-  config.after(:each) { DatabaseCleaner.clean }
+class MiniTest::Spec
+  before(:each) { DatabaseCleaner.start }
+  after(:each) { DatabaseCleaner.clean }
 end
 
 ActiveRecord::Schema.define do
