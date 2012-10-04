@@ -1,6 +1,4 @@
-# Ibham
-
-[![Build Status](https://secure.travis-ci.org/bloc40/ibham.png)](http://travis-ci.org/bloc40/ibham)
+# Ibham [![Build Status](https://secure.travis-ci.org/bloc40/ibham.png)](http://travis-ci.org/bloc40/ibham)
 
 TODO: Write a gem description
 
