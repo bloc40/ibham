@@ -7,14 +7,15 @@ db_config = {
   :adapter => 'sqlite3',
   :database => ':memory:'
 }
+
 ActiveRecord::Base.establish_connection(db_config)
+
+ActiveRecord::Migration.verbose = false
 
 RSpec.configure do |config|
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
 end
-
-ActiveRecord::Migration.verbose = false
 
 ActiveRecord::Schema.define do
   create_table :votes do |t|
