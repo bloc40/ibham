@@ -28,4 +28,24 @@ describe 'ActsAsVoter' do
       Vote.last.value.should == -1
     end
   end
+
+  describe '#cast_vote' do
+    it 'should create a positive vote' do
+      Vote.count.should == 0
+      expect do
+        vote = user.cast_vote(item, 1)
+        vote.save
+      end.to change { Vote.count }.by(1)
+      Vote.last.value.should == 1
+    end
+
+    it 'should create a negative vote' do
+      Vote.count.should == 0
+      expect do
+        vote = user.cast_vote(item, -1)
+        vote.save
+      end.to change { Vote.count }.by(1)
+      Vote.last.value.should == -1
+    end
+  end
 end

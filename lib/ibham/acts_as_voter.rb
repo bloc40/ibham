@@ -28,6 +28,10 @@ module Ibham
       def vote_down(voteable)
         votes.create(voteable: voteable, value: -1)
       end
+
+      def cast_vote(voteable, value)
+        votes.build(voteable: voteable, value: value)
+      end
     end
   end
 end
