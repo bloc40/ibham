@@ -1,11 +1,8 @@
 require 'active_record'
 require 'database_cleaner'
 require 'sqlite3'
-require 'turn'
 require 'ibham'
 require 'minitest/autorun'
-
-Turn.config.format = :dot
 
 db_config = {
   :adapter => 'sqlite3',
