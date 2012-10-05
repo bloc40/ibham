@@ -1,8 +1,8 @@
 require_relative '../spec_helper'
 
 describe 'ActsAsVoter' do
-  let(:user) { User.create!(email: 'foo@example.com') }
-  let(:item) { Item.create!(name: 'item') }
+  let(:user) { User.create! }
+  let(:item) { Item.create! }
 
   describe '#can_vote_for?' do
     it 'should return true if the voter can vote for an item' do

@@ -1,8 +1,8 @@
 class IbhamCreateVotes < ActiveRecord::Migration
   def change
     create_table :votes do |t|
-      t.references :voter, polymorphic: true
-      t.references :voteable, polymorphic: true
+      t.references :voter, :polymorphic => true
+      t.references :voteable, :polymorphic => true
       t.integer :value
 
       t.timestamps

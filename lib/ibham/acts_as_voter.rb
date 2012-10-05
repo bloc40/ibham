@@ -14,23 +14,23 @@ module Ibham
       extend ActiveSupport::Concern
 
       included do
-        has_many :votes, as: :voter, dependent: :destroy
+        has_many :votes, as: :voter, :dependent => :destroy
       end
 
       def can_vote_for?(voteable)
-        votes.build(voteable: voteable, value: 1).valid?
+        votes.build(:voteable => voteable, :value => 1).valid?
       end
 
       def vote_up(voteable)
-        votes.create(voteable: voteable, value: 1)
+        votes.create(:voteable => voteable, :value => 1)
       end
 
       def vote_down(voteable)
-        votes.create(voteable: voteable, value: -1)
+        votes.create(:voteable => voteable, :value => -1)
       end
 
       def cast_vote(voteable, value)
-        votes.create(voteable: voteable, value: value)
+        votes.create(:voteable => voteable, :value => value)
       end
     end
   end
