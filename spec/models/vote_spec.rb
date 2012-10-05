@@ -18,6 +18,7 @@ describe Vote do
     it 'should fail if the value is other than 1 or -1' do
       vote = Vote.new(value: 2)
       vote.valid?.must_equal false
+      vote.errors.full_messages.must_include 'Value should be either 1 or -1'
     end
 
     it 'should validate uniqueness of vote for voter and voteable' do

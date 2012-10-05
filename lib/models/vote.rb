@@ -5,5 +5,5 @@ class Vote < ActiveRecord::Base
   belongs_to :voter, polymorphic: true
 
   validates_uniqueness_of :voteable_id, scope: :voter_id
-  validates :value, inclusion: { in: [1, -1] }
+  validates :value, inclusion: { in: [1, -1], message: 'should be either 1 or -1' }
 end
