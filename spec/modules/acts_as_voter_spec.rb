@@ -37,7 +37,6 @@ describe 'ActsAsVoter' do
     it 'should create a positive vote' do
       vote_count = Vote.count
       vote = user.cast_vote(item, 1)
-      vote.save
       Vote.count.must_equal vote_count + 1
       Vote.last.value.must_equal 1
     end
@@ -45,7 +44,6 @@ describe 'ActsAsVoter' do
     it 'should create a negative vote' do
       vote_count = Vote.count
       vote = user.cast_vote(item, -1)
-      vote.save
       Vote.count.must_equal vote_count + 1
       Vote.last.value.must_equal -1
     end

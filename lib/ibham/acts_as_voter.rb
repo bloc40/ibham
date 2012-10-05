@@ -30,7 +30,7 @@ module Ibham
       end
 
       def cast_vote(voteable, value)
-        votes.build(voteable: voteable, value: value)
+        votes.create(voteable: voteable, value: value)
       end
     end
   end
