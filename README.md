@@ -51,6 +51,7 @@ The user can cast votes in the following ways:
 
 or
 
+    # The only allowed values are 1 and -1
     user.cast_vote(item, 1)   # Adds a positive vote
     user.cast_vote(item, -1)  # Adds a negative vote
 
