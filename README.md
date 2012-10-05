@@ -2,8 +2,6 @@
 
 Ibham is a gem that allows Rails apps to compute and display voting scores for active records models.
 
-The gem works only with Ruby 1.9.3
-
 ## Installation
 
 Add this line to your application's Gemfile:
