@@ -4,7 +4,7 @@ require 'ibham/acts_as_voteable'
 require 'models/vote'
 
 module Ibham
-  # Your code goes here...
+  ALLOWED_VALUE = 1
 end
 
 ActiveRecord::Base.class_eval do

@@ -18,15 +18,15 @@ module Ibham
       end
 
       def can_vote_for?(voteable)
-        votes.build(:voteable => voteable, :value => 1).valid?
+        votes.build(:voteable => voteable, :value => ALLOWED_VALUE).valid?
       end
 
       def vote_up(voteable)
-        votes.create(:voteable => voteable, :value => 1)
+        votes.create(:voteable => voteable, :value => ALLOWED_VALUE)
       end
 
       def vote_down(voteable)
-        votes.create(:voteable => voteable, :value => -1)
+        votes.create(:voteable => voteable, :value => -ALLOWED_VALUE)
       end
 
       def cast_vote(voteable, value)

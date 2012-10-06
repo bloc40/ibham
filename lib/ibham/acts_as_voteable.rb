@@ -12,21 +12,22 @@ module Ibham
 
     module Voteable
       extend ActiveSupport::Concern
+      DELTA = 0.00001
 
       included do
         has_many :votes, :as => :voteable, :dependent => :destroy
       end
 
       def up_votes
-        votes.where(value: 1).count
+        votes.where(value: ALLOWED_VALUE).count
       end
 
       def down_votes
-        votes.where(value: -1).count
+        votes.where(value: -ALLOWED_VALUE).count
       end
 
       def up_percentage
-        up_votes * 100 / votes.count.to_f
+        (up_votes * 100 / (votes.count.to_f + DELTA)).round
       end
 
       def down_percentage

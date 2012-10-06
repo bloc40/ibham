@@ -28,13 +28,13 @@ describe 'ActsAsVoteable' do
 
   describe '#up_percentage' do
     it 'should return the percentage of positive votes' do
-      item.up_percentage.must_be_close_to 66.6, 0.1
+      item.up_percentage.must_equal 67
     end
   end
 
   describe '#down_percentage' do
     it 'should return the percentage of negative votes' do
-      item.down_percentage.must_be_close_to 33.3, 0.1
+      item.down_percentage.must_equal 33
     end
 
     it 'should return 100% if the item has 1 negative vote' do
