@@ -45,4 +45,11 @@ describe 'ActsAsVoteable' do
       item2.up_percentage.must_equal 0
     end
   end
+
+  describe '#voters' do
+    it 'should return the list of voters' do
+      item.voters.sort.must_equal [user2, user1, user3].sort
+      item2.voters.must_equal [user1]
+    end
+  end
 end

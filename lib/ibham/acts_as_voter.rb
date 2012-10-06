@@ -14,7 +14,7 @@ module Ibham
       extend ActiveSupport::Concern
 
       included do
-        has_many :votes, as: :voter, :dependent => :destroy
+        has_many :votes, :as => :voter, :dependent => :destroy
       end
 
       def can_vote_for?(voteable)

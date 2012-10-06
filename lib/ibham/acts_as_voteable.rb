@@ -14,7 +14,7 @@ module Ibham
       extend ActiveSupport::Concern
 
       included do
-        has_many :votes, as: :voteable, :dependent => :destroy
+        has_many :votes, :as => :voteable, :dependent => :destroy
       end
 
       def up_votes
@@ -31,6 +31,10 @@ module Ibham
 
       def down_percentage
         100 - up_percentage
+      end
+
+      def voters
+        votes.map(&:voter)
       end
     end
   end
