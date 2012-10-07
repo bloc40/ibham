@@ -37,6 +37,14 @@ module Ibham
       def voters
         votes.map(&:voter)
       end
+
+      def up_voters
+        votes.where(:value => ALLOWED_VALUE).map(&:voter)
+      end
+
+      def down_voters
+        votes.where(:value => -ALLOWED_VALUE).map(&:voter)
+      end
     end
   end
 end

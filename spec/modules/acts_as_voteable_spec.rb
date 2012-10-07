@@ -52,4 +52,18 @@ describe 'ActsAsVoteable' do
       item2.voters.must_equal [user1]
     end
   end
+
+  describe '#up_voters' do
+    it 'should return the list of users who casted positive votes' do
+      item.up_voters.sort.must_equal [user1, user3].sort
+      item2.up_voters.must_equal []
+    end
+  end
+
+  describe '#down_voters' do
+    it 'should return the list of users who casted negative votes' do
+      item.down_voters.sort.must_equal [user2]
+      item2.down_voters.must_equal [user1]
+    end
+  end
 end
