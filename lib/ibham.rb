@@ -5,6 +5,7 @@ require 'models/vote'
 
 module Ibham
   ALLOWED_VALUE = 1
+  DELTA = 0.00001
 end
 
 ActiveRecord::Base.class_eval do

@@ -18,7 +18,6 @@ module Ibham
 
     module Voteable
       extend ActiveSupport::Concern
-      DELTA = 0.00001
 
       included do
         has_many :votes, :as => :voteable, :dependent => :destroy
@@ -51,7 +50,7 @@ module Ibham
       #
       #   item.down_percentage
       def down_percentage
-        100 - up_percentage
+        (down_votes * 100 / (votes.count.to_f + DELTA)).round
       end
 
       # To get the list of voters, call <tt>voters</tt> on the voteable object.
