@@ -1,5 +1,4 @@
 require 'active_record'
-require 'database_cleaner'
 require 'sqlite3'
 require 'ibham'
 require 'minitest/autorun'
@@ -9,13 +8,23 @@ db_config = {
   :database => ':memory:'
 }
 
-ActiveRecord::Base.establish_connection(db_config)
-
 ActiveRecord::Migration.verbose = false
 
 class MiniTest::Spec
-  before(:each) { DatabaseCleaner.start }
-  after(:each) { DatabaseCleaner.clean }
+  before do
+    User.destroy_all
+    Item.destroy_all
+    Vote.destroy_all
+  end
+
+  config = {
+    :adapter => 'sqlite3',
+    :database => ':memory:'
+  }
+
+  ActiveRecord::Base.establish_connection(config)
+  ActiveRecord::Base.connection.create_database config[:database] rescue nil
+  ActiveRecord::Base.connection.drop_database config[:database] rescue nil
 end
 
 ActiveRecord::Schema.define do
