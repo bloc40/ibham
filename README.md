@@ -70,7 +70,8 @@ To retrieve the votes:
     item.up_percentage        # Return the percentage of positive votes
     item.down_percentage      # Return the percentage of negative votes
 
-For more information visit [[the documentation page](http://rubydoc.info/github/bloc40/ibham/master/frames)]
+For more information visit [the documentation
+page](http://rubydoc.info/github/bloc40/ibham/master/frames).
 ## Contributing
 
 1. Fork it
