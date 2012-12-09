@@ -1,4 +1,4 @@
-# Ibham [![Build Status](https://secure.travis-ci.org/bloc40/ibham.png)](http://travis-ci.org/bloc40/ibham) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/bloc40/ibham)
+# Ibham [![Build Status](https://secure.travis-ci.org/bloc40/ibham.png)](http://travis-ci.org/bloc40/ibham) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/bloc40/ibham) [![Dependency Status](https://gemnasium.com/bloc40/ibham.png)](https://gemnasium.com/bloc40/ibham)
 
 Ibham is a gem that allows Rails apps to compute and display voting scores for active records models.
 
