@@ -3,11 +3,6 @@ require 'sqlite3'
 require 'ibham'
 require 'minitest/autorun'
 
-db_config = {
-  :adapter => 'sqlite3',
-  :database => ':memory:'
-}
-
 ActiveRecord::Migration.verbose = false
 
 class MiniTest::Spec
