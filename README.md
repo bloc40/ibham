@@ -45,12 +45,6 @@ The user can cast votes in the following ways:
     user.vote_up(item)        # Adds a positive vote
     user.vote_down(item)      # Adds a negative vote
 
-or
-
-    # The only allowed values are 1 and -1
-    user.cast_vote(item, 1)   # Adds a positive vote
-    user.cast_vote(item, -1)  # Adds a negative vote
-
 Since a user can cast only one vote per item, to check if the user can
 cast vote for an item:
 
