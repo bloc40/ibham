@@ -2,8 +2,6 @@ class Vote < ActiveRecord::Base
 
   ALLOWED_VALUE = 1
 
-  attr_accessible :value, :voteable
-
   belongs_to :voteable, :polymorphic => true
   belongs_to :voter, :polymorphic => true
 

@@ -32,20 +32,4 @@ describe 'ActsAsVoter' do
       Vote.last.value.must_equal -1
     end
   end
-
-  describe '#cast_vote' do
-    it 'should create a positive vote' do
-      vote_count = Vote.count
-      vote = user.cast_vote(item, 1)
-      Vote.count.must_equal vote_count + 1
-      Vote.last.value.must_equal 1
-    end
-
-    it 'should create a negative vote' do
-      vote_count = Vote.count
-      vote = user.cast_vote(item, -1)
-      Vote.count.must_equal vote_count + 1
-      Vote.last.value.must_equal -1
-    end
-  end
 end

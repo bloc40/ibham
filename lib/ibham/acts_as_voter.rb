@@ -52,16 +52,6 @@ module Ibham
       def vote_down(voteable)
         votes.create(:voteable => voteable, :value => -ALLOWED_VALUE)
       end
-
-      # To allow the user to dynamically cast a vote, call <tt>cast_vote</tt> with the item
-      # to vote for and the value (1 or -1)
-      #
-      #   user.cast_vote(item, 1)
-      #
-      # This will add a new record with a positive vote.
-      def cast_vote(voteable, value)
-        votes.create(:voteable => voteable, :value => value)
-      end
     end
   end
 end
