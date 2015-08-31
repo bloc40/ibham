@@ -13,8 +13,8 @@ class MiniTest::Spec
   end
 
   config = {
-    :adapter => 'sqlite3',
-    :database => ':memory:'
+    adapter: 'sqlite3',
+    database: ':memory:'
   }
 
   ActiveRecord::Base.establish_connection(config)
@@ -24,11 +24,11 @@ end
 
 ActiveRecord::Schema.define do
   create_table :votes do |t|
-    t.references :voter, :polymorphic => true
-    t.references :voteable, :polymorphic => true
+    t.references :voter, polymorphic: true
+    t.references :voteable, polymorphic: true
     t.integer :value
 
-    t.timestamps :null => false
+    t.timestamps null: false
   end
 
   add_index :votes, [:voter_id, :voter_type]
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define do
 
   create_table :users do |t|
     t.string :email
-    t.timestamps :null => false
+    t.timestamps null: false
   end
 
   create_table :items do |t|
     t.string :name
-    t.timestamps :null => false
+    t.timestamps null: false
   end
 end
 

@@ -20,7 +20,7 @@ module Ibham
       extend ActiveSupport::Concern
 
       included do
-        has_many :votes, :as => :voter, :dependent => :destroy
+        has_many :votes, as: :voter, dependent: :destroy
       end
 
       # To check if the voter (the user for example) can vote for this item,
@@ -30,7 +30,7 @@ module Ibham
       #
       # This will return either true for false
       def can_vote_for?(voteable)
-        votes.build(:voteable => voteable, :value => ALLOWED_VALUE).valid?
+        votes.build(voteable: voteable, value: ALLOWED_VALUE).valid?
       end
 
       # To cast a positive vote, the voter (e.g. the use) calls <tt>vote_up</tt>
@@ -40,7 +40,7 @@ module Ibham
       #
       # This will add a new record with a positive vote for this item by this user in the votes table.
       def vote_up(voteable)
-        votes.create(:voteable => voteable, :value => ALLOWED_VALUE)
+        votes.create(voteable: voteable, value: ALLOWED_VALUE)
       end
 
       # To cast a negative vote, the voter (e.g. the use) can call <tt>vote_up</tt>
@@ -50,7 +50,7 @@ module Ibham
       #
       # This will add a new record with a negative vote for this item by this user in the votes table.
       def vote_down(voteable)
-        votes.create(:voteable => voteable, :value => -ALLOWED_VALUE)
+        votes.create(voteable: voteable, value: -ALLOWED_VALUE)
       end
     end
   end
