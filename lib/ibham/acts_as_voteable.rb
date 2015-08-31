@@ -73,6 +73,10 @@ module Ibham
       def down_voters
         votes.where(value: -ALLOWED_VALUE).map(&:voter)
       end
+
+      def vote_result
+        votes.sum(:value)
+      end
     end
   end
 end

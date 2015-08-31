@@ -66,4 +66,11 @@ describe 'ActsAsVoteable' do
       item2.down_voters.must_equal [user1]
     end
   end
+
+  describe '#vote_result' do
+    it 'returns the result of the votes per item' do
+      item.vote_result.must_equal 1
+      item2.vote_result.must_equal -1
+    end
+  end
 end
