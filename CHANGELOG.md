@@ -20,5 +20,9 @@
 ## v0.1.3
 
 * Drop support for Ruby < 1.9
-* Add method: vote_result
+* Add method: vote_sum
 * Clean up code and comments
+
+## v0.1.4
+
+* Rename vote_result to vote_sum

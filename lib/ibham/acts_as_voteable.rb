@@ -80,11 +80,11 @@ module Ibham
         votes.where(value: -ALLOWED_VALUE).map(&:voter)
       end
 
-      # To get the result of the votes, call <tt>vote_result</tt> on the
+      # To get the result of the votes, call <tt>vote_sum</tt> on the
       # voteable object.
       #
-      # item.vote_result
-      def vote_result
+      # item.vote_sum
+      def vote_sum
         votes.sum(:value)
       end
     end

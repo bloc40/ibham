@@ -67,10 +67,10 @@ describe 'ActsAsVoteable' do
     end
   end
 
-  describe '#vote_result' do
-    it 'returns the result of the votes per item' do
-      item.vote_result.must_equal 1
-      item2.vote_result.must_equal -1
+  describe '#vote_sum' do
+    it 'returns the sum of the votes per item' do
+      item.vote_sum.must_equal 1
+      item2.vote_sum.must_equal -1
     end
   end
 end

@@ -42,8 +42,8 @@ The user can cast votes in the following ways:
     user = User.create
     item = Item.create
 
-    user.vote_up(item)        # Adds a positive vote
-    user.vote_down(item)      # Adds a negative vote
+    user.vote_up(item)    # Adds a positive vote
+    user.vote_down(item)  # Adds a negative vote
 
 Since a user can cast only one vote per item, to check if the user can
 cast vote for an item:
@@ -54,13 +54,13 @@ cast vote for an item:
 
 To retrieve the votes:
 
-    item.up_votes             # Returns the total number of positive votes
-    item.down_votes           # Returns the total number of negative votes
+    item.up_votes         # Returns the total number of positive votes
+    item.down_votes       # Returns the total number of negative votes
 
-    item.up_percentage        # Returns the percentage of positive votes
-    item.down_percentage      # Returns the percentage of negative votes
+    item.up_percentage    # Returns the percentage of positive votes
+    item.down_percentage  # Returns the percentage of negative votes
 
-    item.vote_result          # Retuns the result of votes
+    item.vote_sum         # Retuns the result of votes
 
 For more information visit [the documentation
 page](http://rubydoc.info/github/bloc40/ibham/master/frames).
