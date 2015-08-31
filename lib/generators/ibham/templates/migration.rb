@@ -5,7 +5,7 @@ class IbhamCreateVotes < ActiveRecord::Migration
       t.references :voteable, :polymorphic => true
       t.integer :value
 
-      t.timestamps
+      t.timestamps :null => false
     end
 
     add_index :votes, [:voter_id, :voter_type]

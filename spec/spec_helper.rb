@@ -28,7 +28,7 @@ ActiveRecord::Schema.define do
     t.references :voteable, :polymorphic => true
     t.integer :value
 
-    t.timestamps
+    t.timestamps :null => false
   end
 
   add_index :votes, [:voter_id, :voter_type]
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define do
 
   create_table :users do |t|
     t.string :email
-    t.timestamps
+    t.timestamps :null => false
   end
 
   create_table :items do |t|
     t.string :name
-    t.timestamps
+    t.timestamps :null => false
   end
 end
 
