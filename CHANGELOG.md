@@ -16,3 +16,9 @@
 * Remove database_cleaner gem
 * Refactor code
 * Add comments to methods
+
+## v0.1.3
+
+* Drop support for Ruby < 1.9
+* Add method: vote_result
+* Clean up code and comments

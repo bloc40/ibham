@@ -54,11 +54,13 @@ cast vote for an item:
 
 To retrieve the votes:
 
-    item.up_votes             # Return the total number of positive votes
-    item.down_votes           # Return the total number of negative votes
+    item.up_votes             # Returns the total number of positive votes
+    item.down_votes           # Returns the total number of negative votes
 
-    item.up_percentage        # Return the percentage of positive votes
-    item.down_percentage      # Return the percentage of negative votes
+    item.up_percentage        # Returns the percentage of positive votes
+    item.down_percentage      # Returns the percentage of negative votes
+
+    item.vote_result          # Retuns the result of votes
 
 For more information visit [the documentation
 page](http://rubydoc.info/github/bloc40/ibham/master/frames).
